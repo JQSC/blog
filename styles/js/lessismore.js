@@ -61,7 +61,7 @@
 SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
-    json: '/chishengqi.github.io/search.json' ,
+    json: '/search.json' ,
     searchResultTemplate: '<li><a href="{url}">. {title}</a></li>',
     noResultsText: '',
     limit: 5,
