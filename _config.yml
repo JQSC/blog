@@ -1,18 +1,25 @@
 # Site settings
 name: 池圣齐的博客
 email: 122377305@qq.com
-author: csq
+author: chishengqi
 url: https://jqsc.github.io/
-#baseurl: "https://jqsc.github.io/chishengqi.github.io/"  #根目录
+# baseurl: "https://jqsc.github.io/chishengqi.github.io/"  #根目录
 baseurl: ""  #根目录
-description: 假如生活欺骗了你，不要悲伤，不要哭泣。
-motto: 我们笑着说再见，却深知再见遥遥无期。
+
+description: 宁可在骄阳里暴晒,也不愿在黑暗中偷生。
+docmotto: 我们笑着说再见，却深知再见遥遥无期。
 banner: 我想带你去看绚丽的山峦，去看秀丽的溪谷，这份心情，人类是如何称呼的呢。
-excerpt_separator:  '<!-- more -->' #文章摘要
+motto: 非是风动,亦非幡动,唯心动尔。
+# 每篇文章从开头到第一次出现excerpt_separator的地方作为文章的摘要
+excerpt_separator:  '<!-- more -->' 
 paginate: 5
 paginate_path: "page:num"
 plugins: [jekyll-paginate]
 exclude: ['README.md']
 github_username: chishengqi
 highlighter: rouge
+
+# ruby -e 'puts Encoding::list.join("\n")' 此命令可查看ruby支持的编码
 encoding: utf-8
+permalink: /:year/:month/:day/:title/
+
