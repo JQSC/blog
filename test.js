@@ -81,7 +81,7 @@ var c = "2"
 
 var p = Promise.resolve(21);
 p.then(function (v) {
-   // console.log(v); // 21 
+    // console.log(v); // 21 
 
     // 创建一个promise并返回
     return new Promise(function (resolve, reject) {
@@ -96,12 +96,43 @@ p.then(function (v) {
     .then(function (v) {
         // 在前一步中的100ms延迟之后运行
         //console.log(v); // 42 
-    }); 
+    });
 
 
-    var a =function(){
-        var b="cccc"
+
+
+    var plan =function(){
+        console.log("启飞")
+    };
+    plan.prototype.fire=function(){
+        console.log("发射子弹")
+    };
+    plan.prototype.help=function(){
+        console.log("顶不住了,寻求支援!!")
+    };
+    //飞机的装饰类
+    var planDecorator=function(plan){
+        this.plan=plan
     }
-    var c=a()
+    planDecorator.prototype.fire=function(){
+        this.plan.fire()
+    }
+    planDecorator.prototype.help=function(){
+        this.plan.help()
+    };
+    //装饰器——添加发射导弹功能
+    var MissileDecorator=function(plan){
+        planDecorator.call(this, plan);
+        console.log("装配,添加发射导弹功能")
+    }
+    MissileDecorator.prototype = new planDecorator();
+    MissileDecorator.prototype.fire=function(){
+        this.plan.fire()
+        console.log("发射导弹")
+    }
 
-    console.log(a(),c)
+    var plan=new plan();
+    plan=new MissileDecorator(plan);
+    plan.fire()
+    plan.help()
+    
