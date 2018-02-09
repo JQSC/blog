@@ -15,8 +15,9 @@ excerpt_separator:  '<!-- more -->'
 paginate: 5
 paginate_path: "page:num"
 plugins: [jekyll-paginate]
-exclude: ['README.md']
+exclude: ['README.md']  #转换时排除某些文件夹或文件
 github_username: chishengqi
+github: https://github.com/JQSC/JQSC.github.io
 highlighter: rouge
 
 # ruby -e 'puts Encoding::list.join("\n")' 此命令可查看ruby支持的编码
